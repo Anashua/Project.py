@@ -14,7 +14,7 @@ def body_mass_index():
     def adult(heigh, weigh):
         index = bmi(weigh, heigh)
         index = index * 100
-        category = {range(0, 6): 'Severe Thinness', range(16, 17): 'Moderate thinness',
+        category = {range(0, 16): 'Severe Thinness', range(16, 17): 'Moderate thinness',
                     range(17, 19): 'Mild Thinness',
                     range(19, 25): 'normal', range(25, 30): 'overweight', range(30, 35): 'Obese Class 1 ',
                     range(35, 40): 'Obese Class 2', range(40, 1000): "Obese Class 3"}
