@@ -103,33 +103,25 @@ def checkbp():
 	while not adia.isnumeric():
 		adia=input('Enter systolic pressure (morning):')
 	adia=int(adia)
+	def BP():
+		sys=0
+		dia=0
+		sys=(msys+asys)/2
+		dia=(mdia+adia)/2
+		return sys, dia
 	
-	sys=0
-	dia=0
-	sys=(msys+asys)/2
-	dia=(mdia+adia)/2
-
+	index1, index2=BP()
 		
 	cat={range(0,90): 'Your systolic pressure is in the LOW region', range(90,120): 'Your systolic pressure is in the IDEAL region', range(120, 140):'Your systolic pressure is in the PRE-HYPERTENSION region', range(140, 160):'Your systolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(160, 300):'Your systolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}	
 	for i in cat.keys():
-	     if index in i:
-                return cat[i], index
+	     if index1 in i:
+                print(i)
 	     
-	     
-	if (dia>=40 and dia<=60):
-		print()
-	elif (dia>=61 and dia<=80):
-		print()
-	elif (dia>=81 and dia<=90):
-		print()
-	elif (dia >= 91 and dia <= 100):
-		print()
-	elif (dia >= 101):
-		print()
+	   
 	cat2={range(0,60):'Your diastolic pressure is in the LOW region', range(60,80):'Your diastolic pressure is in the IDEAL region', range(80,90):'Your diastolic pressure is in the PRE-HYPERTENSION region', range(90,100):'Your diastolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(100, 500):'Your diastolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}
 	for i in cat2.keys():
-	     if index in i:
-                return cat2[i], index     
+	     if index2 in i:
+                print(i)   
 	     
 	     
 	     
