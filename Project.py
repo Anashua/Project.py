@@ -178,20 +178,3 @@ gen=int(gen)
 mn, mx=calc(age, rhr, lhr, hhr, gen)
 
 print('Ideal pulse rate is between', trunc(mn), 'and', trunc(mx))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
