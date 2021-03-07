@@ -1,4 +1,3 @@
-
 from math import trunc
 
 def checkbp():
@@ -23,30 +22,74 @@ def checkbp():
 	while not adia.isnumeric():
 		adia=input('Enter systolic pressure (morning):')
 	adia=int(adia)
+	def BP():
+		sys=0
+		dia=0
+		sys=(msys+asys)/2
+		dia=(mdia+adia)/2
+		return sys, dia
 	
-	sys=0
-	dia=0
-	sys=(msys+asys)/2
-	dia=(mdia+adia)/2
+	index1, index2=BP()
+		
+	cat={range(0,90): 'Your systolic pressure is in the LOW region', range(90,120): 'Your systolic pressure is in the IDEAL region', range(120, 140):'Your systolic pressure is in the PRE-HYPERTENSION region', range(140, 160):'Your systolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(160, 300):'Your systolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}	
+	for i in cat.keys():
+		if index1 in i:
+                print(i)
+	     
+	   
+	cat2={range(0,60):'Your diastolic pressure is in the LOW region', range(60,80):'Your diastolic pressure is in the IDEAL region', range(80,90):'Your diastolic pressure is in the PRE-HYPERTENSION region', range(90,100):'Your diastolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(100, 500):'Your diastolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}
+	for i in cat2.keys():
+	     if index2 in i:
+                print(i)   
+	     
+	     
+	     
+checkbp()
 
-	if(sys>=70 and sys<=90):
-		print('Your systolic pressure is in the LOW region')
-	elif(sys>=91 and sys<=120):
-		print('Your systolic pressure is in the IDEAL region')
-	elif(sys>=121 and sys<=140):
-		print('Your systolic pressure is in the PRE-HYPERTENSION region')
-	elif (sys >= 141 and sys <= 160):
-		print('Your systolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region')
-	elif (sys >= 161):
-		print('Your systolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region')
 
-	if (dia>=40 and dia<=60):
-		print('Your diastolic pressure is in the LOW region')
-	elif (dia>=61 and dia<=80):
-		print('Your diastolic pressure is in the IDEAL region')
-	elif (dia>=81 and dia<=90):
-		print('Your diastolic pressure is in the PRE-HYPERTENSION region')
-	elif (dia >= 91 and dia <= 100):
-		print('Your diastolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region')
-	elif (dia >= 101):
-		print('Your diastolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region')
+
+def calc(age, rhr, lhr, hhr, gen):
+	if gen == 1:
+		maxhr = 206.9-(0.67*age)
+		H = maxhr-rhr
+		mn = (H*(lhr/100))+rhr	
+		mx = (H*(hhr/100))+rhr
+		return mn, mx
+	elif gen == 2:
+		maxhr = 206.9-(0.88*age)
+		H = maxhr-rhr
+		mn = (H*(lhr/100))+rhr
+		mx = (H*(hhr/100))+rhr
+		return mn, mx
+	   
+
+age=input('enter your age:')
+while not age.isnumeric():
+	age=input('enter your age:')
+age=int(age)
+
+rhr=input('enter your resting heart rate:')
+while not rhr.isnumeric():
+	rhr=input('enter your resting heart rate:')
+rhr=int(rhr)
+
+lhr=input('enter lower limit of heart rate:')
+while not lhr.isnumeric():
+	lhr=input('enter lower limit of heart rate:')
+lhr=int(lhr)
+
+hhr=input('enter upper limit of heart hate:')
+while not hhr.isnumeric():
+	hhr=input('enter upper limit of heart hate:')
+hhr=int(hhr)
+
+gen=input('enter your gender[1-male; 2-female] :')
+while not gen.isnumeric():
+	gen=input('enter your gender[1-male; 2-female] :')
+gen=int(gen)
+
+mn, mx=calc(age, rhr, lhr, hhr, gen)
+
+print('Ideal pulse rate is between', trunc(mn), 'and', trunc(mx))
+
+
