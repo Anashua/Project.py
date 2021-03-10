@@ -41,7 +41,7 @@ def hrmax():
         female(age,hgh,wgt)
     else:
         print("Entered wrong option")
-
+hrmax()
 
 
 

@@ -34,16 +34,13 @@ def checkbp():
 	cat={range(0,90): 'Your systolic pressure is in the LOW region', range(90,120): 'Your systolic pressure is in the IDEAL region', range(120, 140):'Your systolic pressure is in the PRE-HYPERTENSION region', range(140, 160):'Your systolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(160, 300):'Your systolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}	
 	for i in cat.keys():
 		if index1 in i:
-                print(i)
+        	print(i)
 	     
 	   
 	cat2={range(0,60):'Your diastolic pressure is in the LOW region', range(60,80):'Your diastolic pressure is in the IDEAL region', range(80,90):'Your diastolic pressure is in the PRE-HYPERTENSION region', range(90,100):'Your diastolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region', range(100, 500):'Your diastolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'}
 	for i in cat2.keys():
 	     if index2 in i:
-                print(i)   
-	     
-	     
-	     
+            print(i)   
 checkbp()
 
 

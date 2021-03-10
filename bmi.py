@@ -37,15 +37,16 @@ def body_mass_index():
     while weight <= 0:
         weight = int(input("Enter your body weight in kg"))
 
-    height = input("Enter your body height in kg")
+    height = input("Enter your height in ")
     while not height.isnumeric():
-        height = input("Enter your body height in kg : ")
+        height = input("Enter your  height in  : ")
     height = int(height)
     while height <= 0:
-        height = int(input("Enter your body height in kg"))
+        height = int(input("Enter your height in :"))
 
     if age in range(1, 18):
         bmi = child(height, weight)
     else:
         bmi = adult(height, weight)
     return bmi
+print("bmi is: ",body_mass_index())

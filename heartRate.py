@@ -6,7 +6,7 @@ def calc(age, rhr, lhr, hhr, gen):
 		mn = (H*(lhr/100))+rhr	
 		mx = (H*(hhr/100))+rhr
 		return mn, mx
-	elif gen == 2:
+	elif gen == 2:1:
 		maxhr = 206.9-(0.88*age)
 		H = maxhr-rhr
 		mn = (H*(lhr/100))+rhr
