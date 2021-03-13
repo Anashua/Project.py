@@ -22,31 +22,19 @@ def body_mass_index():
             if index in i:
                 return category[i], index
 
-    print("Hi ! Welcome to BMI Calculator")
-    age = input("Enter your age :")
-    while not age.isnumeric():
-        age = input("Enter your age : ")
-    age = int(age)
-    while age <= 0 or age >= 120:
-        age = int(input("Enter your age : "))
-
-    weight = input("Enter your body weight in kg")
-    while not weight.isnumeric():
-        weight = input("Enter your body weight in kg : ")
-    weight = int(weight)
-    while weight <= 0:
-        weight = int(input("Enter your body weight in kg"))
-
-    height = input("Enter your height in ")
-    while not height.isnumeric():
-        height = input("Enter your  height in  : ")
-    height = int(height)
-    while height <= 0:
-        height = int(input("Enter your height in :"))
+    with open("data.txt","r") as data:
+        lis=list()
+        for line in data:
+           lis.append((line).split("\n"))
+    name=lis[0][0]
+    #print("Hi !",name," Welcome to BMI Calculator")
+    age =int(lis[2][0])
+    weight =int(lis[4][0])
+    height = int(lis[3][0])
+    gender=lis[1][0]
 
     if age in range(1, 18):
         bmi = child(height, weight)
     else:
         bmi = adult(height, weight)
     return bmi
-print("bmi is: ",body_mass_index())

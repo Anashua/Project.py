@@ -1,4 +1,9 @@
+import bmi
+import steps
 from tkinter import *
+from tkinter import messagebox
+def bmi_func():
+    messagebox.showinfo("BMI is :",bmi.body_mass_index())
 def func():
     main = Tk()
     main.geometry("500x500")
@@ -20,7 +25,7 @@ def func():
     hr_button=Button(main,text="Check Heart Rate",width=8).grid(column=0,row=1,sticky="nsew")
 
     # BMI FRAME
-    bmi_button=Button(main,text="Calculate \n BMI",width=8).grid(column=1,row=1,sticky="nsew")
+    bmi_button=Button(main,text="Calculate \n BMI",width=8,command=bmi_func).grid(column=1,row=1,sticky="nsew")
 
     # CHECK_BP
     cbp_button=Button(main,text="Check \n BP",width=8).grid(column=0,row=2,sticky="nsew")
@@ -32,3 +37,4 @@ def func():
     cancelButton = Button(main, text="EXIT", command=main.destroy).grid(row=3, column=0,columnspan=2, sticky="nsew")
 
     main.mainloop()
+func()
