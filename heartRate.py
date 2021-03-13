@@ -1,18 +1,20 @@
 from math import trunc
+
+
 def calc(age, rhr, lhr, hhr, gen):
 	if gen == 1:
 		maxhr = 206.9-(0.67*age)
 		H = maxhr-rhr
-		mn = (H*(lhr/100))+rhr	
+		mn = (H*(lhr/100))+rhr
 		mx = (H*(hhr/100))+rhr
 		return mn, mx
-	elif gen == 2:1:
+	elif gen == 2:
 		maxhr = 206.9-(0.88*age)
 		H = maxhr-rhr
 		mn = (H*(lhr/100))+rhr
 		mx = (H*(hhr/100))+rhr
 		return mn, mx
-	   
+
 
 age=input('enter your age:')
 while not age.isnumeric():
@@ -42,3 +44,5 @@ gen=int(gen)
 mn, mx=calc(age, rhr, lhr, hhr, gen)
 
 print('Ideal pulse rate is between', trunc(mn), 'and', trunc(mx))
+
+
