@@ -1,3 +1,4 @@
+import second_window
 from tkinter import *
 from tkinter import messagebox
 main = Tk()
@@ -48,7 +49,7 @@ height_Entry = Entry(main).grid(column=1, row=3, sticky="w")
 weight_label = Label(main, text="WEIGHT: ").grid(column=0, row=4, sticky="w")
 weight_Entry = Entry(main).grid(column=1, row=4, sticky="w")
 
-okButton = Button(main, text=" NEXT ").grid(row=5, column=3, sticky="e")#####
+okButton = Button(main, text=" NEXT ",command=second_window.func).grid(row=5, column=3, sticky="e")#####
 # #change destroy to quit or vice versa for errors
 cancelButton = Button(main, text="Cancel", command=main.destroy).grid(row=5, column=3, sticky="se")
 main.mainloop()
