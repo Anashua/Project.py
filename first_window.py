@@ -4,13 +4,12 @@ from tkinter import *
 
 def write_file():
     with open("data.txt", "w") as data_file:
-        print(name_var.get(), file=data_file)
-        print(gender.get(), file=data_file)
-        print(int(age_var.get()), file=data_file)
-        print(int(height_var.get()), file=data_file)
-        print(int(weight_var.get()), file=data_file)
+        print(name_var.get(), file=data_file,flush=True)
+        print(gender.get(), file=data_file,flush=True)
+        print(age_var.get(), file=data_file,flush=True)
+        print(height_var.get(), file=data_file,flush=True)
+        print(weight_var.get(), file=data_file,flush=True)
         second_window.func()
-
 
 main = Tk()
 main.geometry("600x600")
@@ -43,6 +42,7 @@ nameEntry = Entry(name_entryFrame, width=20, textvariable=name_var).grid(column=
 # 3rd ROW
 age_label = Label(main, text="AGE: ").grid(column=0, row=2, sticky="w")
 age_var = StringVar()
+age_var.set("18")
 age_Entry = Entry(main, textvariable=age_var).grid(column=1, row=2, sticky="w")
 
 gender_frame = Frame(main).grid(column=0, row=3)
@@ -54,15 +54,17 @@ m_radio = Radiobutton(gender_frame, text="Male", value="Male", variable=gender).
 
 # height
 
-height_label = Label(main, text="HEIGHT: ").grid(column=0, row=3, sticky="w")
-height_var = StringVar()
-height_Entry = Entry(main, textvariable=height_var).grid(column=1, row=3, sticky="w")
+height_label = Label(main, text="HEIGHT in cm: ").grid(column=0, row=3, sticky="w")
+height_var = IntVar()
+height_var.set(6)
+height_Spinner = Spinbox(main, width=2, from_=60, to=300,textvariable=height_var).grid(column=1, row=3, sticky="w")
 
 # weight
 
 weight_label = Label(main, text="WEIGHT: ").grid(column=0, row=4, sticky="w")
-weight_var = StringVar()
-weight_Entry = Entry(main, textvariable=weight_var).grid(column=1, row=4, sticky="w")
+weight_var = IntVar()
+weight_var.set(60)
+weight_Spinner = Spinbox(main, width=2, from_=1, to=400,textvariable=weight_var).grid(column=1, row=4, sticky="w")
 
 okButton = Button(main, text=" NEXT ", command=write_file).grid(row=5, column=3, sticky="e")  #####
 # #change destroy to quit or vice versa for errors

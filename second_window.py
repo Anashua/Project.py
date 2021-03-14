@@ -2,9 +2,11 @@ import bmi
 import steps
 from tkinter import *
 from tkinter import messagebox
+import  calories
 def bmi_func():
-    messagebox.showinfo("BMI is :",bmi.body_mass_index())
-import calories
+    disp=bmi.body_mass_index()
+    messagebox.showinfo("BMI is :",disp)
+
 def func():
     main = Tk()
     main.geometry("500x500")
@@ -32,7 +34,7 @@ def func():
     cbp_button=Button(main,text="Check \n BP",width=8).grid(column=0,row=2,sticky="nsew")
 
     # STEP_COUNTER
-    sc_button=Button(main,text="Step \n Counter",width=8,command=steps.func_main()).grid(column=1,row=2,sticky="nsew")
+    sc_button=Button(main,text="Step \n Counter",width=8,command=steps.func_main).grid(column=1,row=2,sticky="nsew")
 
     #EXIT FUNCTION
     cancelButton = Button(main, text="EXIT", command=main.destroy).grid(row=3, column=0,columnspan=2, sticky="nsew")

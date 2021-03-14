@@ -28,10 +28,7 @@ def body_mass_index():
            lis.append((line).split("\n"))
     age =int(lis[2][0])
     weight =int(lis[4][0])
-    height = int(lis[3][0])
-
-
-
+    height = int(lis[3][0])/30.48
     if age in range(1, 18):
         bmi = child(height, weight)
     else:
