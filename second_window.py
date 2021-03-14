@@ -31,10 +31,9 @@ def func():
     cbp_button=Button(main,text="Check \n BP",width=8).grid(column=0,row=2,sticky="nsew")
 
     # STEP_COUNTER
-    sc_button=Button(main,text="Step \n Counter",width=8).grid(column=1,row=2,sticky="nsew")
+    sc_button=Button(main,text="Step \n Counter",width=8,command=steps.func_main()).grid(column=1,row=2,sticky="nsew")
 
     #EXIT FUNCTION
     cancelButton = Button(main, text="EXIT", command=main.destroy).grid(row=3, column=0,columnspan=2, sticky="nsew")
 
     main.mainloop()
-func()

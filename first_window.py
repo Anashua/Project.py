@@ -1,6 +1,5 @@
 import second_window
 from tkinter import *
-from tkinter import messagebox
 
 
 def write_file():
