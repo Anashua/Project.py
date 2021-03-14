@@ -26,16 +26,14 @@ def body_mass_index():
         lis=list()
         for line in data:
            lis.append((line).split("\n"))
-    name=lis[0][0]
     age =int(lis[2][0])
     weight =int(lis[4][0])
     height = int(lis[3][0])
-    gender=lis[1][0]
-    print(name)
+
+
 
     if age in range(1, 18):
         bmi = child(height, weight)
     else:
         bmi = adult(height, weight)
     return bmi
-body_mass_index()
