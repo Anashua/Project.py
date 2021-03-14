@@ -57,7 +57,7 @@ m_radio = Radiobutton(gender_frame, text="Male", value="Male", variable=gender).
 height_label = Label(main, text="HEIGHT in cm: ").grid(column=0, row=3, sticky="w")
 height_var = IntVar()
 height_var.set(6)
-height_Spinner = Spinbox(main, width=2, from_=60, to=300,textvariable=height_var).grid(column=1, row=3, sticky="w")
+height_Spinner = Spinbox(main, width=2, from_=160, to=300,textvariable=height_var).grid(column=1, row=3, sticky="w")
 
 # weight
 
