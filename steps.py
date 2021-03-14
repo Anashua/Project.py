@@ -17,7 +17,7 @@ def func_main():
                 stride_len=dict[i]
         return stride_len
     def onClick():
-        steps=dist.get()/stride()
+        steps=(dist.get()*100)/stride()
         val=Label(root,text="Steps walked are {}".format(steps)).grid(row=3,column=0)
         exit_button=Button(root,text="EXIT",command=root.destroy).grid(row=4,column=0)
 
