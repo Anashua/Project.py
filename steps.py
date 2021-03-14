@@ -27,4 +27,3 @@ def func_main():
     entry_label=Entry(root,text="Enter distance walked in m",textvariable=dist).grid(row=1,column=0)
     entry_button=Button(root,text="Click here",command=onClick).grid(row=2,column=0)
     root.mainloop()
-func_main()
