@@ -1,51 +1,33 @@
-import proj
 from tkinter import *
-
-r=Tk()
-l=Label(r, text='Hello! Enter following details to check your pulse rate:')
-l.grid(row=0, column=7)
-
-ln=Label(r, text='Age')
-ln.place(x=540,y=20)
-
-ln2=Label(r, text='Resting heart rate')
-ln2.place(x=470,y=35)
-
-ln3=Label(r, text='Low end heart rate')
-ln3.place(x=460,y=55)
-
-ln4=Label(r, text='High end heart rate zone')
-ln4.place(x=470,y=75)
-
-ln5=Label(r, text='Gender: 1-female; 2-male')
-ln5.place(x=520,y=95)
+def checkbp():
+    m=Tk()
+    m.title('bp')
+    m.geometry('500x500')
+    m.configure(bg='red')
 
 
-e1=Entry(r)
-e1.grid(row=2, column=20)
+    la1=Label(m, text='welcome to BP calculator')
+    la1.grid(row=1,column=2)
 
-e2=Entry(r)
-e2.grid(row=3, column=20)
+    la=Label(m, text='pressure=').grid(row=3,column=2)
+    e1=Entry(m,width=20)
+    e1.grid(row=3,column=3)
 
-e3=Entry(r)
-e3.grid(row=4, column=20)
+    def click():
+        p=int(e1.get())
+        if p<=90:
+            mes='Your pressure is in the LOW region'
+        elif p>90 and p<=120:
+            mes='Your pressure is in the IDEAL region'
+        elif p>120 and p<=140:
+            mes='Your pressure is in the PRE-HYPERTENSION region'
+        elif p>140 and p<=160:
+            mes='Your systolic pressure is in the HIGH(STAGE 1 HYPERTENSION) region'
+        elif p>160 and p<=7000:
+            mes='Your systolic pressure is in the HIGH(STAGE 2 HYPERTENSION) region'
+        ll=Label(m,text=mes)
+        ll.grid(row=9,column=1)
 
-e4=Entry(r)
-e4.grid(row=5, column=20)
+    but=Button(m,text='click for result',command=click).grid(row=5,column=1)
 
-e5=Entry(r)
-e5.grid(row=6, column=20)
-
-
-def getinput():
-    age = e1.get()
-    rhr = e2.get()
-    lhr = e3.get()
-    hhr = e4.get()
-    gen = e5.get()
-    proj.calc(age, rhr, lhr, hhr, gen)
-
-mb=Button(r, text="submit",command = getinput)
-mb.grid()
-
-r.mainloop()
+    m.mainloop()

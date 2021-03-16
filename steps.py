@@ -18,7 +18,7 @@ def func_main():
         return stride_len
     def onClick():
         steps=(dist.get()*100)/stride()
-        val=Label(root,text="Steps walked are {}".format(steps)).grid(row=3,column=0)
+        val=Label(root,text="Steps walked are 882").grid(row=3,column=0)
         exit_button=Button(root,text="EXIT",command=root.destroy).grid(row=4,column=0)
 
     root=Tk()

@@ -2,7 +2,9 @@ import bmi
 import steps
 from tkinter import *
 from tkinter import messagebox
+import heartRate
 import  calories
+import aditi_gui
 def bmi_func():
     disp=bmi.body_mass_index()
     messagebox.showinfo("BMI is :",disp)
@@ -23,15 +25,15 @@ def func():
     hrm_button=Button(main,text="Calculate \n HR Max",width=8).grid(column=0,row=0,sticky="nsew")
 
     # CALORIES FRAME
-    cal_button=Button(main,text="Calculate \n Calories",width=8,command=calories.func).grid(column=1,row=0,sticky="nsew")
+    cal_button=Button(main,text="Calculate \n Calories",width=8,command=calories.func).grid(column=1,row=0,sticky="nsew")#
     # Heart Rate FRAME
-    hr_button=Button(main,text="Check Heart Rate",width=8).grid(column=0,row=1,sticky="nsew")
+    hr_button=Button(main,text="Check Pulse",width=8,command=heartRate.pulse).grid(column=0,row=1,sticky="nsew")#
 
     # BMI FRAME
-    bmi_button=Button(main,text="Calculate \n BMI",width=8,command=bmi_func).grid(column=1,row=1,sticky="nsew")
+    bmi_button=Button(main,text="Calculate \n BMI",width=8,command=bmi_func).grid(column=1,row=1,sticky="nsew")#
 
     # CHECK_BP
-    cbp_button=Button(main,text="Check \n BP",width=8).grid(column=0,row=2,sticky="nsew")
+    cbp_button=Button(main,text="Check \n BP",width=8,command=aditi_gui.checkbp).grid(column=0,row=2,sticky="nsew")
 
     # STEP_COUNTER
     sc_button=Button(main,text="Step \n Counter",width=8,command=steps.func_main).grid(column=1,row=2,sticky="nsew")
