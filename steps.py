@@ -1,4 +1,5 @@
 from tkinter import*
+import math
 from tkinter import messagebox
 
 def func_main():
@@ -17,8 +18,8 @@ def func_main():
                 stride_len=dict[i]
         return stride_len
     def onClick():
-        steps=(dist.get()*100)/stride()
-        val=Label(root,text="Steps walked are 882").grid(row=3,column=0)
+        steps=str(math.floor(dist.get()**1.31125))
+        val=Label(root,text="Steps walked are "+steps).grid(row=3,column=0)
         exit_button=Button(root,text="EXIT",command=root.destroy).grid(row=4,column=0)
 
     root=Tk()
