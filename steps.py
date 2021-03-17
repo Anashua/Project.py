@@ -19,7 +19,7 @@ def func_main():
         return stride_len
     def onClick():
         steps=str(math.floor(dist.get()**1.31125))
-        val=Label(root,text="Steps walked are "+steps).grid(row=3,column=0)
+        messagebox.showinfo("Steps walked are ",steps)
         exit_button=Button(root,text="EXIT",command=root.destroy).grid(row=4,column=0)
 
     root=Tk()
